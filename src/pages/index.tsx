@@ -6,7 +6,11 @@ export default function Home() {
   return (
     <>
       <Seo title="audrey" description="description" />
-      <Typography>Welcome to audrey</Typography>
+      <div>
+        <Typography theme="primary" variant="display" component="div">
+          Welcome to audrey
+        </Typography>
+      </div>
     </>
   );
 }
