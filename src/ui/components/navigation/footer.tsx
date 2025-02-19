@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import { Container } from "../container/container";
 import { ActiveLink } from "./active-link";
 import { FooterLinks } from "./applinks";
+import { LinkTypes } from "@/lib/link-type";
+import { SocialNetwokbuttons } from "./social-networks-buttons";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -39,7 +41,9 @@ export const Footer = () => {
           <Typography variant="caption4" theme="gray">
             {`copyright &copy; &middot; ${currentYear} : Propulsed by Ralph Wolckoff`}
           </Typography>
-          <div className="d"></div>
+          <div className="">
+            <SocialNetwokbuttons theme="gray" />
+          </div>
         </div>
       </Container>
     </div>
@@ -53,10 +57,10 @@ interface footerLinkProps {
 const FooterLink = ({ data }: footerLinkProps) => {
   const LinkLists = data.links.map((link) => (
     <div key={uuidv4()}>
-      {link.type === "internal" && (
+      {link.type === LinkTypes.INTERNAL && (
         <ActiveLink href={link.baseUrl}>{link.label}</ActiveLink>
       )}
-      {link.type === "external" && (
+      {link.type === LinkTypes.EXTERNAL && (
         <a href={link.baseUrl} target="_blank">
           {link.label}
         </a>
