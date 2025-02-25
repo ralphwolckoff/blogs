@@ -19,6 +19,8 @@ export const SocialNetwokbuttons = ({ className, theme = "accent" }: Props) => {
         icon={{
           icon: socialNetwork.icon ? socialNetwork.icon : RiFacebookFill,
         }}
+        baseUrl={socialNetwork.baseUrl}
+        linkType={socialNetwork.type}
       />
     );
   });

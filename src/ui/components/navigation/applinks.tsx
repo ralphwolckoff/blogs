@@ -31,17 +31,17 @@ export const footerUsersLinks: Applinks[] = [
   },
   {
     label: "Connexion",
-    baseUrl: "/#",
+    baseUrl: "/connexion",
     type: "internal",
   },
   {
     label: "Inscription",
-    baseUrl: "/#",
+    baseUrl: "/connexion/inscription",
     type: "internal",
   },
   {
     label: "Mot de passe oublié ",
-    baseUrl: "/#",
+    baseUrl: "/connexion/forget_password",
     type: "internal",
   },
 ];

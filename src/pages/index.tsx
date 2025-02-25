@@ -1,13 +1,14 @@
-import { Footer } from "@/ui/components/navigation/footer";
-import { Navigation } from "@/ui/components/navigation/navigation";
+import { Layout } from "@/ui/components/layout/layout";
 import { Seo } from "@/ui/components/seo/Seo";
+import { LandingPageContainer } from "@/ui/modules/landing-page/landing-page-container";
 
 export default function Home() {
   return (
     <>
       <Seo title="audrey" description="description" />
-      <Navigation />
-      <Footer />
+      <Layout>
+        <LandingPageContainer />
+      </Layout>
     </>
   );
 }

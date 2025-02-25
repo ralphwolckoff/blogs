@@ -28,15 +28,22 @@ export const Navigation = ({}: Props) => {
           <Typography
             variant="caption3"
             component="div"
-            className="flex items-center gap-2"
+            className="flex items-center gap-7"
           >
             <ActiveLink href="/design-system">Design-System</ActiveLink>
-            <span>Projects</span>
-            <span>Projects</span>
+            <Link href="#/">Projects</Link>
+            <Link href="#/">Formations</Link>
+            <Link href="#/">Contacts</Link>
           </Typography>
           <div className="flex items-center gap-2">
-            <Button size="small">Connexion</Button>
-            <Button size="small" variant="secondary">
+            <Button baseUrl="/connexion" size="small">
+              Connexion
+            </Button>
+            <Button
+              baseUrl="/connexion/inscription"
+              size="small"
+              variant="secondary"
+            >
               Rejoindre
             </Button>
           </div>
