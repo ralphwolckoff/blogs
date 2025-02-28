@@ -4,9 +4,12 @@ import { Typography } from "@/ui/design-sytem/typography/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import { RegisterForm } from "./register.form";
-import { RiHome2Fill, RiHome2Line } from "react-icons/ri";
+import { FormsType } from "@/types/form";
 
-export const RegisterView = () => {
+interface Props {
+  form: FormsType;
+}
+export const RegisterView = ({ form }: Props) => {
   return (
     <Container className="grid grid-cols-2 gap-20 mb-32">
       <div className="">
@@ -34,7 +37,7 @@ export const RegisterView = () => {
               </Typography>
             </div>
           </div>
-          <RegisterForm />
+          <RegisterForm form={form} />
         </Box>
       </div>
     </Container>

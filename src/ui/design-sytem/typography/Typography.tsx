@@ -18,7 +18,15 @@ interface Props {
     | "caption3"
     | "caption4";
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "div" | "p" | "span";
-  theme?: "black" | "white" | "gray" | "primary" | "secondary";
+  theme?:
+    | "black"
+    | "white"
+    | "gray"
+    | "primary"
+    | "secondary"
+    | "danger"
+    | "success"
+    | "warning";
   weight?: "regular" | "medium" | "bold";
   className?: string;
   children: React.ReactNode;
@@ -95,6 +103,15 @@ export const Typography = ({
       break;
     case "secondary":
       colorStyle = "text-secondary";
+      break;
+    case "danger":
+      colorStyle = "text-alert-danger";
+      break;
+    case "success":
+      colorStyle = "text-alert-success";
+      break;
+    case "warning":
+      colorStyle = "text-alert-warning";
       break;
     default:
       break;

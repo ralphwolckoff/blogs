@@ -4,8 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/ui/components/container/container";
 import { ForgetPasswordForm } from "./forget-password.form";
+import { FormsType } from "@/types/form";
 
-export const ForgetPasswordView = () => {
+interface Props {
+  form: FormsType;
+}
+export const ForgetPasswordView = ({ form }: Props) => {
   return (
     <Container className="grid grid-cols-2 gap-20 mb-32">
       <div className="">
@@ -28,7 +32,7 @@ export const ForgetPasswordView = () => {
               <Link href="/connexion">Connexion</Link>
             </Typography>
           </div>
-          <ForgetPasswordForm />
+          <ForgetPasswordForm form={form} />
         </Box>
       </div>
     </Container>
