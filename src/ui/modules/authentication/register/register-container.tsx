@@ -1,13 +1,18 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { RegisterView } from "./register.view";
 import { RegisterFormType } from "@/types/form";
-import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/config/firebase-config";
+import { firebaseCreateUser } from "@/api/authentication";
+import { toast } from "react-toastify";
+import { useToggle } from "@/hooks/use-toggle";
 
 export const RegisterContainer = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const {
+    value: isLoading,
+    setValue: setIsLoading,
+    toggle,
+  } = useToggle({
+    initial: true,
+  });
   const {
     handleSubmit,
     formState: { errors },
@@ -16,24 +21,34 @@ export const RegisterContainer = () => {
     reset,
   } = useForm<RegisterFormType>();
 
+  const handleCreateUserAuthentication = async ({
+    email,
+    password,
+    how_did_hear,
+  }: RegisterFormType) => {
+    const { data, error } = await firebaseCreateUser(email, password);
+    if (error) {
+      setIsLoading(false);
+      toast.error(error.message);
+      return;
+    }
+    setIsLoading(false);
+    toast.success("User created successfully");
+    reset();
+  };
+
   const onSubmit: SubmitHandler<RegisterFormType> = async (formData) => {
     setIsLoading(true);
-    console.log("formData", formData);
-    const { email, password } = formData;
+    const { password } = formData;
 
-    //   createUserWithEmailAndPassword(auth, email, password)
-    //     .then((userCredential) => {
-    //       const user = userCredential.user;
-    //       setIsLoading(false);
-    //       console.log(user);
-    //     })
-    //     .catch((error) => {
-    //       const errorCode = error.code;
-    //       const errorMessage = error.message;
-    //       setIsLoading(false);
-    //       console.log(errorCode, errorMessage);
-
-    //     });
+    if (password.length < 6) {
+      setError("password", {
+        type: "manual",
+        message: "Password must be at least 6 characters",
+      });
+      return;
+    }
+    handleCreateUserAuthentication(formData);
   };
 
   return (
