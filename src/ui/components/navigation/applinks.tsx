@@ -4,23 +4,23 @@ import { RiLinkedinFill, RiSlackFill, RiYoutubeFill } from "react-icons/ri";
 export const footerApplicationLinks: Applinks[] = [
   {
     label: "Acceuill",
-    baseUrl: "/",
+    baseUrl: "/design-system",
     type: "internal",
   },
   {
-    label: "Projects",
-    baseUrl: "/",
+    label: "Produits",
+    baseUrl: "/blogs",
     type: "internal",
   },
   {
-    label: "Ralph wolckoll",
-    baseUrl: "/",
+    label: "Formation",
+    baseUrl: "#/",
     type: "internal",
   },
   {
-    label: "Commandes",
-    baseUrl: "https://youtube.com",
-    type: "external",
+    label: "Contacts",
+    baseUrl: "#/",
+    type: "internal",
   },
 ];
 export const footerUsersLinks: Applinks[] = [

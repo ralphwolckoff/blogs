@@ -24,7 +24,7 @@ export const Footer = () => {
           <Typography variant="caption3" theme="gray">
             Rendez-vous au magazin
           </Typography>
-          <a href="#/" target="_blank">
+          <a href="/blogs" target="_blank">
             <Image
               src="/assets/svg/média.svg"
               width={229}

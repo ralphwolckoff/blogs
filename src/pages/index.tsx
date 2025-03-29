@@ -5,7 +5,7 @@ import { LandingPageContainer } from "@/ui/modules/landing-page/landing-page-con
 export default function Home() {
   return (
     <>
-      <Seo title="audrey" description="description" />
+      <Seo title="Acceuill" description="description" />
       <Layout>
         <LandingPageContainer />
       </Layout>

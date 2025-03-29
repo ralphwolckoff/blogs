@@ -26,11 +26,11 @@ export const HightlightListView = () => {
           </div>
           <div className="relative">
             <Button
-              baseUrl=""
+              baseUrl="/blogs/detail-produit"
               icon={{ icon: RiArrowRightLine }}
               iconPosition="right"
             >
-              Let'go
+              Détail
             </Button>
           </div>
         </div>
@@ -55,11 +55,11 @@ export const HightlightListView = () => {
           <div className="relative">
             <Button
               variant="secondary"
-              baseUrl=""
+              baseUrl="/blogs/detail-produit"
               icon={{ icon: RiArrowRightLine }}
               iconPosition="right"
             >
-              Demarrer
+              Détail
             </Button>
           </div>
         </div>

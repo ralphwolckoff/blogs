@@ -77,6 +77,11 @@ export const FeaturedView = () => {
         >
           {feature.description}
         </Typography>
+        <div className="my-2">
+          <Button size="small" baseUrl="/blogs/list-produits" variant="accent">
+            Détail
+          </Button>
+        </div>
       </div>
     );
   });

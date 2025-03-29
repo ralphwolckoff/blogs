@@ -16,7 +16,7 @@ export const AudreySlackView = () => {
           </Typography>
         </div>
         <Typography variant="h2" component="h2">
-          Rejoins-nous sur le slack de Ralph Pubs
+          Lorem ipsum dolor sit, amet consectetur adipisicing
         </Typography>
         <Typography
           variant="body-lg"
@@ -28,7 +28,7 @@ export const AudreySlackView = () => {
           ut inventore quod necessitatibus fugiat obcaecati.
         </Typography>
         <Button baseUrl="#/" linkType={LinkTypes.EXTERNAL}>
-          rejoindre le groupe d'aide
+          Commander
         </Button>
       </div>
       <div className="relative w-[600px] h-[600px]">

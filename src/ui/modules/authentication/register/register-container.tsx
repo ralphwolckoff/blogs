@@ -6,12 +6,8 @@ import { toast } from "react-toastify";
 import { useToggle } from "@/hooks/use-toggle";
 
 export const RegisterContainer = () => {
-  const {
-    value: isLoading,
-    setValue: setIsLoading,
-    toggle,
-  } = useToggle({
-    initial: true,
+  const { value: isLoading, setValue: setIsLoading } = useToggle({
+    initial: false,
   });
   const {
     handleSubmit,
