@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Seo title="Acceuill" description="description" />
-      <Layout>
+      <Layout withSidebar>
         <LandingPageContainer />
       </Layout>
     </>
